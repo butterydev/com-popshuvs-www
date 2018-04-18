@@ -1,0 +1,44 @@
+.posts {
+	list-style: none;
+}
+.post {
+	display: block;
+	max-width: 100%;
+}
+.post-video,
+.post-video-iframe {
+	display: block;
+}
+.post-video {
+	height: 0;
+	padding-bottom: 56.25%;
+	position: relative;
+}
+.post-video-iframe {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.post-info {
+	padding: 16px 16px 24px 16px;
+}
+.post-info-title {
+	color: #262626;
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 6px;
+	max-width: 100%;
+	text-transform: capitalize;
+}
+.post-info-author {
+	color: #999;
+	font-size: 12px;
+	margin-bottom: 16px;
+}
+.post-info-published {
+	color: #999;
+	font-size: 10px;
+	text-transform: uppercase;
+}

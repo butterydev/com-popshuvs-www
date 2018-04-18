@@ -1,0 +1,42 @@
+.watch-screen {
+	background-color: #000;
+}
+.watch-screen__back-button {
+	background-color: #0096ff;
+	background-image: linear-gradient(#0096ff, #005dff);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: 40px;
+	left: 0;
+	line-height: 40px;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+	z-index: 1;
+}
+#watch-screen__video {
+	background-color: #000;
+	height: calc(100% - 40px);
+	top: 40px;
+}
+/* is mobile */
+.is-mobile .watch-screen__video-wrapper {
+	bottom: 0;
+	height: 0;
+	padding-bottom: 56.25%;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	width: 100%;
+}
+.is-mobile #watch-screen__video {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}

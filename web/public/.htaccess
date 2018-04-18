@@ -1,0 +1,40 @@
+# check mod_rewrite is loaded
+# RewriteCond <test-string> <condition> [<flags>]
+# RewriteRule <original-path-regexp> <rewritten-path> [<flags>]
+<IfModule mod_rewrite.c>
+
+# enable runtime rewriting engine
+RewriteEngine on
+
+# set the base URL for per-directory (.htaccess) rewrites
+RewriteBase /
+
+# redirect /index.php to / (optional, but recommended I guess)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.php
+RewriteRule ^index.php/?(.*)$ $1 [R=301,L]
+
+# if the request DOES NOT point to a directory that exists...
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# if the request DOES NOT point to a file that exists...
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# 
+RewriteRule ^(.*)$ index.php/$1?%{QUERY_STRING} [L]
+</IfModule>
+
+#RewriteEngine on
+#RewriteRule ^([^?]*)$ index.php?path=$1 [NC,L,QSA]
+
+# hide directory contents
+Options -Indexes
+
+#ErrorDocument 404 /index.php
+
+#<FilesMatch "fetch.php">
+#order deny,allow
+#deny from all
+#allow from localhost
+#allow from 127.0.0.1
+#allow from ::1
+#</FilesMatch>
